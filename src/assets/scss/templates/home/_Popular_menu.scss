@@ -1,0 +1,36 @@
+.sec-menu {
+    background-color: $lt-green;
+    padding: 80px 0 80px 0;
+    position: relative;
+    overflow: hidden;
+    .headings {
+        h6 {
+            @include headings (600,35px,$dk-green,normal,capitalize,0,0 0 20px 0,left);
+            position: relative;
+        }
+        p {
+            @include para (300, 18px, $lt-grey, 27px, unset,15px 0,0,center)
+        }
+    }
+
+    .custom-shape-divider-bottom-1663634746 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(0deg);
+
+        svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 100px;
+
+            .shape-fill {
+                fill: $white;
+            }
+        }
+    }
+}

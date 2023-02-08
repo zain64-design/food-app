@@ -1,0 +1,46 @@
+.sec-features {
+    background: $white;
+    position: relative;
+    padding: 80px 0;
+
+    .head {
+        h6 {
+            @include headings(400, 16px, $yellow, 18px, capitalize, 0 0 15px 0, 0, center);
+            letter-spacing: 1.5px;
+        }
+        h3 {
+            @include headings(600, 50px, $dk-green, 65px, capitalize, 0, 0, center);
+        }
+    }
+
+    .feature-card {
+        @include prod-card ($white,50px 0 0 0,0,hidden);
+        border-radius: 0;
+        .img {
+            background: $lt-green;
+            border-radius: 50%;
+            height: clamp(100px,4vw,100px);
+            width: clamp(100px,4vw,100px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+
+            .thumb {
+                width: 50%;
+                height: auto;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+        .desc {
+            .anchor {
+                @include headings(500, 28px, $dk-green, 30px, capitalize, 25px 0, 0, center);
+                display: block;
+            }
+            p {
+                @include para (300, 16px, $lt-grey, 26px, unset,10px 0,0,center);
+            }
+        }
+    }
+}

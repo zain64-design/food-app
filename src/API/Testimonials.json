@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "subHead": "Testimonial",
+        "Head": "That’s what our lovely Customers Say",
+        "image": "/images/testi1.png", 
+        "para": "“The cuisine here is very good, and also the atmosphere of a comfortable and not noisy place makes the dining atmosphere pleasant, we will definitely come here again”",
+        "client": "Tony Chopper",
+        "desig": "Doctor at SHP"
+    },
+
+    {
+        "id": 2,
+        "subHead": "Testimonial",
+        "Head": "Restaurant that puts the customer's wishes first",
+        "image": "/images/banner-img.png", 
+        "para": "“The cuisine here is very good, and also the atmosphere of a comfortable and not noisy place makes the dining atmosphere pleasant, we will definitely come here again”",
+        "client": "Tony Chopper",
+        "desig": "Doctor at SHP"
+    },
+
+    {
+        "id": 3,
+        "subHead": "Testimonial",
+        "Head": "We serve the best Food for you",
+        "image": "/images/banner-inner.jpg", 
+        "para": "“The cuisine here is very good, and also the atmosphere of a comfortable and not noisy place makes the dining atmosphere pleasant, we will definitely come here again”",
+        "client": "Tony Chopper",
+        "desig": "Doctor at SHP"
+    }
+]

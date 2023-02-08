@@ -1,0 +1,53 @@
+.sec-about {
+    background: $white;
+    position: relative;
+    padding: 80px 0;
+
+    .desc {
+        h6 {
+            @include headings(400, 16px, $yellow, 18px, capitalize, 0 0 15px 0, 0, left);
+            letter-spacing: 1.5px;
+        }
+        h3 {
+            @include headings(600, 49px, $dk-green, 65px, capitalize, 0, 0, left);
+        }
+        p {
+            @include para (300, 16px, $lt-grey, 26px, unset,40px 0,0,left);
+        }
+        .btn-grp {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .ep-btn {
+                @include button (400,14px,$white,normal,capitalize,0,0 30px 0 0,center,56px,170px,100px,2px solid $yellow,none, $yellow);
+                &::after {
+                    content: '\f178';
+                    position: absolute;
+                    top: 15px;
+                    right: 30px;
+                    font-family: 'Font Awesome 6 Pro';
+                    font-weight: 100;
+                    color: $white;
+                    font-size: 25px;
+                    transition: all 0.3s ease-in-out;
+                }
+                &:hover::after {
+                    color: $yellow;
+                }
+            }
+        }
+    }
+
+    .img {
+        .thumb {
+            width: 90%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+    }
+
+}

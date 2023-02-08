@@ -1,0 +1,120 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Ratings from '../Rating/Ratings';
+// import Menu from '../../API/Menu.json';
+import { useState, useEffect } from 'react';
+import MenuProduct from '../Products/MenuProduct';
+import { Navigation, Pagination, Scrollbar, A11y, FreeMode } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import axios from 'axios';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+
+const PopularMenu = () => {
+
+  const [Menu, setMenu] = useState([]);
+  const baseURL = 'https://zain64-design.github.io/product.json';
+  // const baseURL = 'https://demo-customprojects.com/developer/weed-entertainment/api/check-videos2';
+  useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      console.log(response.data);
+      setMenu(response.data)
+    })
+  }, []);
+
+  // const removeElem = (id) => {
+  //   // alert(id)
+  //   const myNewArray = Menu.filter((value) => {
+  //     return value.id != id;
+  //   })
+
+  //   setMenu(myNewArray);
+  // }
+
+  return (
+    <React.Fragment>
+      <section className="sec-menu">
+        <div className="container position-relative">
+          <div className="headings">
+            <h6>Most popular menu</h6>
+          </div>
+          <div className="row">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <Swiper className='product-slider'
+                // install Swiper modules
+                modules={[Navigation, Pagination, Scrollbar, A11y, FreeMode]}
+                // spaceBetween={50}
+                // slidesPerView={3}
+                freeMode={true}
+                loop={false}
+                breakpoints={{
+                  300: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  575: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  767: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  991: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                  },
+                  1199: {
+                    slidesPerView: 2,
+                    spaceBetween: 35,
+                  },
+                  1399: {
+                    slidesPerView: 3,
+                    spaceBetween: 35,
+                  },
+                }}
+                navigation
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+              // onSwiper={(swiper) => console.log(swiper)}
+              // onSlideChange={() => console.log('slide change')}
+              >
+                {Menu.map(value =>
+                  <SwiperSlide key={value.id}>
+                    <MenuProduct data={value} />
+                    {/* <div className="card burger-card">
+                      <div className="img">
+                        <img src={value.image} className="img-fluid thumb" alt="" />
+                      </div>
+
+                      <div className="desc">
+                        <Link to={`/MenuDetail/${value.id}`} className="anchor">{value.name}</Link>
+                        <Ratings name={value.ratings} />
+                        <span className="number">{value.ratings}</span>
+                        <div className="ct-flex">
+                          <p>{value.price} <del>{value.oldPrice}</del> </p>
+                          <button onClick={() => removeElem(value.id)} className="btn order-btn hvr-bounce-to-right">add to cart</button>
+                        </div>
+                      </div>
+                    </div> */}
+                  </SwiperSlide>)}
+              </Swiper>
+            </div>
+            {/* {Menu.map(value => <MenuProduct key={value.id} data={value} />)} */}
+          </div>
+        </div>
+
+        {/* <div className="custom-shape-divider-bottom-1663634746">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="shape-fill"></path>
+          </svg>
+        </div> */}
+      </section>
+    </React.Fragment>
+  )
+}
+
+export default PopularMenu

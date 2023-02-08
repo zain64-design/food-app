@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Sebluck Maicih",
+        "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGZvb2R8ZW58MHx8MHx8&w=1000&q=80", 
+        "price": "$55",
+        "oldPrice": "$70",
+        "ratings": 4.5
+    },
+    {
+        "id": 2,
+        "name": "Sebluck Maicih",
+        "image": "https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fGZvb2R8ZW58MHx8MHx8&w=1000&q=80", 
+        "price": "$27",
+        "oldPrice": "$70",
+        "ratings": 0
+    },
+    {
+        "id": 3,
+        "name": "Sebluck Maicih",
+        "image": "https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTN8fGZvb2R8ZW58MHx8MHx8&w=1000&q=80", 
+        "price": "$30",
+        "oldPrice": "$70",
+        "ratings": 2.5
+    },
+    {
+        "id": 4,
+        "name": "Sebluck Maicih",
+        "image": "https://images.unsplash.com/photo-1539136788836-5699e78bfc75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njh8fGZvb2R8ZW58MHx8MHx8&w=1000&q=80", 
+        "price": "$30",
+        "oldPrice": "$70",
+        "ratings": 4.0
+    }
+]

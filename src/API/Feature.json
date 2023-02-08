@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "image": "/images/ft1.png",
+        "Head": "Fresh Ingredients",
+        "para": "We always put health first, that's why we always use fresh ingredients"
+    },
+    {
+        "id": 2,
+        "image": "/images/ft2.png",
+        "Head": "Amazing Taste",
+        "para": "Cooked by a professional chef, produces a very delicious taste"
+    },
+    {
+        "id": 3,
+        "image": "/images/ft3.png",
+        "Head": "Fast Delivery",
+        "para": "We always make sure the food that comes to you is not cold"
+    }
+]

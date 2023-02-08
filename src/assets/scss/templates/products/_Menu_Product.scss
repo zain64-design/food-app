@@ -1,0 +1,114 @@
+.burger-card {
+    @include prod-card ($white,20px,0,hidden);
+    .img {
+        .thumb {
+            width: 100%;
+            display: block;
+            margin: 0;
+            height: auto;
+            border-radius: 5px;
+        }
+    }
+    .desc {
+        
+        .anchor {
+            display: block;
+            @include headings(500, 20px, $black, 30px, capitalize, 20px 0 0 0, 0, left);
+        }
+        p {
+            @include para(400,20px,$black,20px,capitalize,0,0,left);
+            del {
+                color: $lt-grey;
+                font-weight: 300;
+                font-size: 16px;
+            }
+        }
+        .order-btn {
+            @include button(400,14px,$white,normal,capitalize,0,0,center,37px,121px,50px,2px solid $yellow,none,$yellow)
+        }
+        .ct-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .ant-rate {
+          .ant-rate-star:not(:last-child) {
+            margin-inline-end: 5px;
+          }  
+        }
+        .number {
+            @include para(400,14px,$lt-grey,20px,capitalize,0 0 0 10px,0,left);
+        }
+    }
+}
+
+.product-slider {
+    position: unset;
+    .swiper-pagination {
+        position: relative;
+        bottom: 0;
+        margin: 15px 0 0 0;
+        .swiper-pagination-bullet {
+            border-radius: 50px;
+            transition: all 0.5s ease-in-out;
+            background: $lt-grey;
+        }
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            width: 20px;
+            background: $yellow;
+        }
+    }
+    .swiper-button-next  {
+        top: 20px;
+        height: auto;
+        width: auto;
+        right: 10px;
+    }
+    .swiper-button-next::after {
+        content: '\f054';
+        font-family: 'Font Awesome 6 Pro';
+        font-weight: 700;
+        font-size: 20px;
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $yellow;
+        color: $white;
+        border: 2px solid $yellow;
+        transition: all 0.5s ease-in-out;
+    }
+    .swiper-button-prev {
+        top: 20px;
+        height: auto;
+        width: auto;
+        right: 90px;
+        left: auto;
+    }
+    .swiper-button-prev::after {
+        content: '\f053';
+        font-family: 'Font Awesome 6 Pro';
+        font-weight: 700;
+        font-size: 20px;
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $yellow;
+        color: $white;
+        border: 2px solid $yellow;
+        transition: all 0.5s ease-in-out;  
+    }
+    .swiper-button-prev:hover::after, .swiper-button-next:hover::after {
+        background: $white;
+        color: $yellow;
+    }
+}

@@ -1,0 +1,86 @@
+
+
+@mixin headings($font-weight,$font-size,$sh-color,$line-height,$txt-cap,$h-mar,$h-padd,$sh-txt-align) {
+    font-family: "Poppins",sans-serif;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $sh-color;
+    line-height: $line-height;
+    text-transform: $txt-cap;
+    margin: $h-mar;
+    padding: $h-padd;
+    text-align: $sh-txt-align;
+    text-decoration: none;
+}
+
+@mixin sub-headings($font-weight,$font-size,$sh-color,$line-height,$txt-cap,$h-mar,$h-padd,$sh-txt-align) {
+    font-family: "Affection",sans-serif;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $sh-color;
+    line-height: $line-height;
+    text-transform: $txt-cap;
+    margin: $h-mar;
+    padding: $h-padd;
+    text-align: $sh-txt-align;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+@mixin para ($font-weight,$font-size,$sh-color,$line-height,$txt-cap,$h-mar,$h-padd,$sh-txt-align) {
+    font-family: "Poppins",sans-serif;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $sh-color;
+    line-height: $line-height;
+    text-transform: $txt-cap;
+    margin: $h-mar;
+    padding: $h-padd;
+    text-align: $sh-txt-align;
+}
+
+@mixin button ($font-weight,$font-size,$sh-color,$line-height,$txt-cap,$bt-mar,$bt-padd,$sh-txt-align,$bt-h,$bt-w,$bt-rd,$bt-bdr,$bt-shadow,$bt-bg) {
+    font-family: "Poppins",sans-serif;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $sh-color;
+    line-height: $line-height;
+    text-transform: $txt-cap;
+    margin: $bt-mar;
+    padding: $bt-padd;
+    text-align: $sh-txt-align;
+    height: $bt-h;
+    width: $bt-w;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: $bt-rd;
+    border: $bt-bdr;
+    box-shadow: $bt-shadow;
+    background: $bt-bg;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+@mixin prod-card($cardbg,$cardpad,$cardmar,$cardflow) {
+    background: $cardbg;
+    border-radius: 8px;
+    padding: $cardpad;
+    margin: $cardmar;
+    box-shadow: none;
+    overflow: $cardflow;
+    border: none;
+}
+
+@mixin cd-a ($font-size,$amg,$pmg) {
+    font-family: 'Poppins',sans-serif;
+    font-size: $font-size;
+    color: $black;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin: $amg;
+    padding: $pmg;
+    text-decoration: none;
+}
