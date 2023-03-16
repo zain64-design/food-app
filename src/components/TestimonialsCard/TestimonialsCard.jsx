@@ -8,13 +8,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const TestimonialsCard = () => {
     return (
         <React.Fragment>
             <section className="sec-testimonial">
-                <div className="container">
-                    <div className="row">
+                <Container>
+                    <Row>
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <Swiper className='testimonial-slider'
                                 // install Swiper modules
@@ -56,7 +57,7 @@ const TestimonialsCard = () => {
                                 {TestimonialAPI.map(value =>
                                     <SwiperSlide key={value.id}>
                                         <div className="row align-items-center justify-content-between">
-                                            <div className="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5">
+                                            <Col xs={12} sm={12} md={12} lg={5} xl={5} xxl={5}>
                                                 <div className="desc">
                                                     <h6 className='animate__animated animate__bounce'>{value.subHead}</h6>
                                                     <h3>{value.Head}</h3>
@@ -64,18 +65,18 @@ const TestimonialsCard = () => {
                                                     <h5>{value.client}</h5>
                                                     <span>{value.desig}</span>
                                                 </div>
-                                            </div>
-                                            <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                                            </Col>
+                                            <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                                 <div className="img">
                                                     <img src={value.image} className="img-fluid thumb" alt="" />
                                                 </div>
-                                            </div>
+                                            </Col>
                                         </div>
                                     </SwiperSlide>)}
                             </Swiper>
                         </div>
-                    </div>
-                </div>
+                    </Row>
+                </Container>
             </section>
         </React.Fragment>
     )

@@ -1,14 +1,15 @@
 import React from 'react'
+import { Col, Container, Row, Table } from 'react-bootstrap'
 
 const CartItems = () => {
     return (
         <>
             <section className="sec-cart">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+                <Container>
+                    <Row>
+                        <Col xs={12} sm={12} md={12} lg={9} xl={9} xxl={9}>
                             <div className="table-responsive">
-                                <table className="table cart-table">
+                                <Table className="table cart-table">
                                     <thead>
                                         <tr>
                                             <th scope="col">Products</th>
@@ -66,9 +67,9 @@ const CartItems = () => {
                                             </td>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </Table>
                             </div>
-                        </div>
+                        </Col>
                         <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
                             <div className="card checkout-box">
                                 <div className="details">
@@ -91,8 +92,8 @@ const CartItems = () => {
                             </div>
                         </div>
 
-                    </div>
-                </div>
+                    </Row>
+                </Container>
             </section>
         </>
     )

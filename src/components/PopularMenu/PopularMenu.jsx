@@ -12,6 +12,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const PopularMenu = () => {
 
@@ -37,12 +38,12 @@ const PopularMenu = () => {
   return (
     <React.Fragment>
       <section className="sec-menu">
-        <div className="container position-relative">
+        <Container className="position-relative">
           <div className="headings">
             <h6>Most popular menu</h6>
           </div>
-          <div className="row">
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+          <Row>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
               <Swiper className='product-slider'
                 // install Swiper modules
                 modules={[Navigation, Pagination, Scrollbar, A11y, FreeMode]}
@@ -102,10 +103,10 @@ const PopularMenu = () => {
                     </div> */}
                   </SwiperSlide>)}
               </Swiper>
-            </div>
+            </Col>
             {/* {Menu.map(value => <MenuProduct key={value.id} data={value} />)} */}
-          </div>
-        </div>
+          </Row>
+        </Container>
 
         {/* <div className="custom-shape-divider-bottom-1663634746">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

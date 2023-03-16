@@ -18,7 +18,7 @@ const Home = () => {
       <PopularMenu/>
       <AboutContent/>
       <GalleryContent>
-      <GalleryDetailBtn/>
+        <GalleryDetailBtn/>
       </GalleryContent>
       <FeaturesContent/>
       <TestimonialsCard/>

@@ -1,15 +1,16 @@
 import React from 'react';
 import FooterAPI from '../../API/Footer.json';
 import { NavLink } from 'react-router-dom';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const Footer = () => {
     return (
         <React.Fragment>
             <footer>
                 <div className="footer-top">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 col-xxl-3">
+                    <Container>
+                        <Row>
+                            <Col xs={12} sm={12} md={12} lg={3} xl={3} xxl={3}>
                                 {FooterAPI.map((value) => (
                                     <div className="footer-box" key={value.id}>
                                         <div className="img-logo">
@@ -37,9 +38,9 @@ const Footer = () => {
                                         </ul>
                                     </div>
                                 ))}
-                            </div>
+                            </Col>
 
-                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 col-xxl-2">
+                            <Col xs={12} sm={12} md={12} lg={4} xl={2} xxl={2}>
                                 <div className="footer-box">
                                     <h6>Links</h6>
                                     <ul>
@@ -57,9 +58,9 @@ const Footer = () => {
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </Col>
 
-                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 col-xxl-2">
+                            <Col xs={12} sm={12} md={12} lg={4} xl={2} xxl={2}>
                                 <div className="footer-box">
                                     <h6>About</h6>
                                     <ul>
@@ -74,9 +75,9 @@ const Footer = () => {
                                         </li> */}
                                     </ul>
                                 </div>
-                            </div>
+                            </Col>
 
-                            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 col-xxl-2">
+                            <Col xs={12} sm={12} md={12} lg={4} xl={2} xxl={2}>
                                 <div className="footer-box footer-extra">
                                     <h6>contact us</h6>
                                     <ul className="ext-ul">
@@ -100,9 +101,9 @@ const Footer = () => {
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </Col>
 
-                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 col-xxl-3">
+                            <Col xs={12} sm={12} md={12} lg={3} xl={3} xxl={3}>
                                 <div className="footer-box">
                                     <h6>newsletter</h6>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, voluptates.</p>
@@ -117,9 +118,9 @@ const Footer = () => {
                                         </div>
                                     </form>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
             </footer>
         </React.Fragment>

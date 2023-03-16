@@ -1,9 +1,10 @@
 import React from 'react';
+import { Col } from 'react-bootstrap';
 
 const ChefsCard = (props) => {
   return (
     <React.Fragment>
-      <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+      <Col xs={12} sm={12} md={4} lg={3} xl={3} xxl={3}>
         <div className="card feature-card">
           <div className="img">
             <img src={props.data.image} className="img-fluid thumb" alt="" />
@@ -14,7 +15,7 @@ const ChefsCard = (props) => {
             <p>{props.data.para}</p>
           </div>
         </div>
-      </div>
+      </Col>
     </React.Fragment>
   )
 }

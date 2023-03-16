@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import header_logo from '../../assets/images/logo.png';
 
@@ -13,7 +14,7 @@ const Header = () => {
     <React.Fragment>
       <header className="fixed-top">
         <nav className="navbar navbar-expand-lg">
-          <div className="container">
+          <Container>
             <NavLink className="navbar-brand" to={'/'}>
               <img src={header_logo} className="logo" alt="" />
             </NavLink>
@@ -56,7 +57,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </Container>
         </nav>
       </header>
     </React.Fragment>
