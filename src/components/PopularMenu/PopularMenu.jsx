@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Ratings from '../Rating/Ratings';
-// import Menu from '../../API/Menu.json';
 import { useState, useEffect } from 'react';
 import MenuProduct from '../Products/MenuProduct';
 import { Navigation, Pagination, Scrollbar, A11y, FreeMode } from 'swiper';

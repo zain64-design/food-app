@@ -29,11 +29,10 @@ const BestSellers = (props) => {
         })
 
         // fetch method
-            // fetch(url)
-            //     .then(res => res.json())
-            //     // .then(json => console.log(json))
+            // fetch(url).then(res => res.json())
+            //     .then(json => console.log(json))
             //     .catch(err => console.error('error:' + err))
-            //     .then(burger => {
+            //     .then((burger) => {
             //         setBurger(burger);
             //     });
 

@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Ratings from './../components/Rating/Ratings';
+import Ratings from '../components/Rating/Ratings';
 import axios from 'axios';
 
 const MenuDetail = () => {

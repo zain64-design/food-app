@@ -1,15 +1,24 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import $ from "jquery";
 import { NavLink } from 'react-router-dom';
 import header_logo from '../../assets/images/logo.png';
 
-
-window.addEventListener("scroll", function () {
-  var header = document.querySelector("header");
-  header.classList.toggle("sticky", window.scrollY > 50);
-});
-
 const Header = () => {
+  // window.addEventListener("scroll", function () {
+  //   var header = document.querySelector("header");
+  //   header.classList.toggle("sticky", window.scrollY > 50);
+  //   console.log('.................gotcha');
+  // });
+
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 60) {
+        $('header').addClass("sticky");
+    } else {
+        $('header').removeClass("sticky");
+    }
+});
   return (
     <React.Fragment>
       <header className="fixed-top">
@@ -65,3 +74,4 @@ const Header = () => {
 }
 
 export default Header;
+
