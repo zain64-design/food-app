@@ -114,6 +114,35 @@
 
 
 header {
+  &.scrolled {
+    .navbar {
+      .navbar-brand {
+        .logo {
+          filter: brightness(0) saturate(100%) invert(97%) sepia(13%) saturate(281%) hue-rotate(252deg) brightness(122%) contrast(100%);
+        }
+      }
+      background: $dk-green;
+      .navbar-nav {
+          .nav-item {
+              .nav-link {
+                  &:hover {
+                      color: $white;
+                  }
+              }
+              .nav-link.active {
+                  color: $white;
+              }
+          }
+      }
+      .side-ul {
+        .sd-li {
+          .cart-btn {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
   .navbar {
     .navbar-brand {
       .logo {

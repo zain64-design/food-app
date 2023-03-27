@@ -93,6 +93,21 @@ input:focus, button:focus {
 }
 
 /* Underline From Left */
+header.scrolled .navbar {
+  background: #135846;
+}
+header.scrolled .navbar .navbar-brand .logo {
+  filter: brightness(0) saturate(100%) invert(97%) sepia(13%) saturate(281%) hue-rotate(252deg) brightness(122%) contrast(100%);
+}
+header.scrolled .navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #ffffff;
+}
+header.scrolled .navbar .navbar-nav .nav-item .nav-link.active {
+  color: #ffffff;
+}
+header.scrolled .navbar .side-ul .sd-li .cart-btn {
+  color: #ffffff;
+}
 header .navbar {
   background-color: transparent;
   padding: 25px 0;
@@ -1004,24 +1019,16 @@ footer .footer-box.footer-extra .ext-ul li:nth-child(3) p::before {
      object-position: center;
 }
 .sec-testimonial .testimonial-slider .swiper-slide.swiper-slide-active .desc {
-  -webkit-animation-duration: 0.9s;
   animation-duration: 0.9s;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-name: fadeInUp;
+  animation-delay: 0.5s;
 }
 .sec-testimonial .testimonial-slider .swiper-slide.swiper-slide-active .img {
-  -webkit-animation-duration: 0.9s;
   animation-duration: 0.9s;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-name: fadeInDown;
-          animation-name: fadeInDown;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-name: fadeInDown;
+  animation-delay: 0.5s;
 }
 .sec-testimonial .testimonial-slider .swiper-pagination {
   position: absolute;

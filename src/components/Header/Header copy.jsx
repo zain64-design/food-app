@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Container } from 'react-bootstrap';
 // import $ from "jquery";
 import { NavLink } from 'react-router-dom';
@@ -20,34 +20,16 @@ const Header = () => {
 //     }
 // });
 
-////////////////////////// 1st method
-
-// const [isScrolled, setIsScrolled] = useState(false);
-  
-// useEffect(() => {
-//   function handleScroll() {
-//     if (window.scrollY > 0) {
-//       setIsScrolled(true);
-//     } else {
-//       setIsScrolled(false);
-//     }
-//     console.log("isScrolled", isScrolled);
-//   }
-  
-//   window.addEventListener('scroll', handleScroll);
-  
-//   return () => {
-//     window.removeEventListener('scroll', handleScroll);
-//   };
-// }, [isScrolled]);
-
-////////////////////////// 2nd method
-
 const [isScrolled, setIsScrolled] = useState(false);
 
-useEffect(() => {
+useLayoutEffect(() => {
   function handleScroll() {
-    setIsScrolled(window.scrollY > 0);
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+    console.log("isScrolled", isScrolled);
   }
 
   window.addEventListener('scroll', handleScroll);
