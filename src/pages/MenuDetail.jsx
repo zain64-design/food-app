@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Ratings from '../components/Rating/Ratings';
 import axios from 'axios';
+import { Card,Row,Container } from 'react-bootstrap';
 
 const MenuDetail = () => {
   const [details, setdetails] = useState([]);
@@ -24,12 +25,12 @@ const MenuDetail = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <main>
-        <div className="sec-menu-detail">
-          <div className="container">
-            <div className="row">
-                <div className="card burger-card" key={details.id}>
+        <section className="sec-menu-detail">
+          <Container className="">
+            <Row>
+                <Card className="burger-card" key={details.id}>
                   <div className="img">
                     <img src={details.image} className="img-fluid thumb" alt="" />
                   </div>
@@ -43,12 +44,12 @@ const MenuDetail = () => {
                       <a href="/" className="btn order-btn hvr-bounce-to-right">add to cart</a>
                     </div>
                   </div>
-                </div>
-            </div>
-          </div>
-        </div>
+                </Card>
+            </Row>
+          </Container>
+        </section>
       </main>
-    </div>
+    </>
   )
 }
 
