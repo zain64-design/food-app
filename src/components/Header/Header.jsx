@@ -1,5 +1,6 @@
 import React, { useState, useLayoutEffect, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
+import { WavyLink } from "react-wavy-transitions";
 // import $ from "jquery";
 import { NavLink } from 'react-router-dom';
 import header_logo from '../../assets/images/logo.png';
@@ -71,24 +72,24 @@ useEffect(() => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav m-auto">
                 <li className="nav-item">
-                  <NavLink className="nav-link hvr-underline-from-left" to={'/'}>
+                  <WavyLink direction="up" duration={3000} color="#ff9c3a" className="nav-link hvr-underline-from-left" to={'/'}>
                     home
-                    </NavLink>
+                    </WavyLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link hvr-underline-from-left" to={'/About'}>about us</NavLink>
+                  <WavyLink direction="up" duration={3000} color="#ff9c3a" className="nav-link hvr-underline-from-left" to={'/About'}>about us</WavyLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link hvr-underline-from-left" to={'/Menu'}>menu</NavLink>
+                  <WavyLink direction="up" duration={3000} color="#ff9c3a" className="nav-link hvr-underline-from-left" to={'/Menu'}>menu</WavyLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link hvr-underline-from-left" to={'/Services'}>services</NavLink>
+                  <WavyLink direction="up" duration={3000} color="#ff9c3a" className="nav-link hvr-underline-from-left" to={'/Services'}>services</WavyLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link hvr-underline-from-left" to={'/Blogs'}>blog</NavLink>
+                  <WavyLink direction="up" duration={3000} color="#ff9c3a" className="nav-link hvr-underline-from-left" to={'/Blogs'}>blog</WavyLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link hvr-underline-from-left" to={'/Contact'}>contact us</NavLink>
+                  <WavyLink direction="up" duration={3000} color="#ff9c3a" className="nav-link hvr-underline-from-left" to={'/Contact'}>contact us</WavyLink>
                 </li>
               </ul>
               <ul className="side-ul">

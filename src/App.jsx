@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { WavyContainer, WavyLink } from "react-wavy-transitions";
 // import {localstorage} from '../src/assets/js/localstorage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -18,7 +19,9 @@ import Gallery from './pages/Gallery';
 const App = () => {
   return (
     <>
+    
       <Router>
+      <WavyContainer />
         {/* to connect with browser url we need Router component to import this for use */}
         <Header />
         <Routes>

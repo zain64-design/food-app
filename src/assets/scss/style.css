@@ -138,6 +138,18 @@ header .navbar .navbar-nav .nav-item .nav-link {
 header .navbar .navbar-nav .nav-item .nav-link:hover {
   color: #ff9c3a;
 }
+header .navbar .navbar-nav .nav-item button {
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin: 0 45px 0 0;
+  padding: 0;
+  color: #A7A7A7;
+}
+header .navbar .navbar-nav .nav-item button:hover {
+  color: #ff9c3a;
+}
 header .navbar .side-ul {
   position: relative;
   display: flex;
@@ -639,8 +651,7 @@ footer .footer-box.footer-extra .ext-ul li:nth-child(3) p::before {
   justify-content: space-between;
 }
 .burger-card .desc .ant-rate .ant-rate-star:not(:last-child) {
-  -webkit-margin-end: 5px;
-          margin-inline-end: 5px;
+  margin-inline-end: 5px;
 }
 .burger-card .desc .number {
   font-family: "Poppins", sans-serif;
