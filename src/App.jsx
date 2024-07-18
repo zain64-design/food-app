@@ -15,12 +15,14 @@ import Testimonials from './pages/Testimonials';
 import Chefs from './pages/Chefs';
 import Cart from './pages/Cart';
 import Gallery from './pages/Gallery';
+import SecureComponent from './SecureComp';
 
 const App = () => {
   return (
     <>
     
       <Router>
+        <SecureComponent/>
       <WavyContainer />
         {/* to connect with browser url we need Router component to import this for use */}
         <Header />
