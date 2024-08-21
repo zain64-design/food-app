@@ -22,7 +22,7 @@ const App = () => {
     <>
     
       <Router>
-        <SecureComponent/>
+        {/* <SecureComponent/> */}
       <WavyContainer />
         {/* to connect with browser url we need Router component to import this for use */}
         <Header />

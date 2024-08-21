@@ -1,6 +1,6 @@
 import React from 'react';
 import TestimonialAPI from '../../API/Testimonials.json';
-import { Navigation, Pagination, Scrollbar, A11y, FreeMode } from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -19,8 +19,11 @@ const TestimonialsCard = () => {
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <Swiper className='testimonial-slider'
                                 // install Swiper modules
-                                modules={[Navigation, Pagination, Scrollbar, A11y, FreeMode]}
-                                freeMode={false}
+                                modules={[Navigation, Pagination]}
+                                navigation={{
+                                    prevEl: '.swiper-button-prev',
+                                    nextEl: '.swiper-button-next',
+                                  }}
                                 loop={true}
                                 breakpoints={{
                                     300: {
@@ -48,11 +51,6 @@ const TestimonialsCard = () => {
                                         spaceBetween: 10,
                                     },
                                 }}
-                                navigation
-                                pagination={{ clickable: true }}
-                                scrollbar={{ draggable: true }}
-                            // onSwiper={(swiper) => console.log(swiper)}
-                            // onSlideChange={() => console.log('slide change')}
                             >
                                 {TestimonialAPI.map(value =>
                                     <SwiperSlide key={value.id}>

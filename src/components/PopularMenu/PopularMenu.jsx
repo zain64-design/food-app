@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import MenuProduct from '../Products/MenuProduct';
-import { Navigation, Pagination, Scrollbar, A11y, FreeMode } from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import axios from 'axios';
 // Import Swiper styles
@@ -43,11 +43,15 @@ const PopularMenu = () => {
             <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
               <Swiper className='product-slider'
                 // install Swiper modules
-                modules={[Navigation, Pagination, Scrollbar, A11y, FreeMode]}
-                // spaceBetween={50}
-                // slidesPerView={3}
-                freeMode={true}
+                modules={[Navigation, Pagination]}
                 loop={false}
+                navigation={{
+                  prevEl: '.swiper-button-prev',
+                  nextEl: '.swiper-button-next',
+                }}
+                pagination={{
+                  clickable: true,
+                }}
                 breakpoints={{
                   300: {
                     slidesPerView: 1,
@@ -74,11 +78,6 @@ const PopularMenu = () => {
                     spaceBetween: 35,
                   },
                 }}
-                navigation
-                pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
-              // onSwiper={(swiper) => console.log(swiper)}
-              // onSlideChange={() => console.log('slide change')}
               >
                 {Menu.map(value =>
                   <SwiperSlide key={value.id}>

@@ -6,7 +6,6 @@ import PopularMenu from '../components/PopularMenu/PopularMenu';
 import TestimonialsCard from '../components/TestimonialsCard/TestimonialsCard';
 import FeaturesContent from '../components/FeaturesContent/FeaturesContent'
 import GalleryContent from '../components/GalleryContent/GalleryContent';
-import GalleryDetailBtn from '../components/GalleryContent/GalleryDetailBtn';
 
 
 const Home = () => {
@@ -17,12 +16,10 @@ const Home = () => {
       {/* <BestSellers heading="our best sellers"/> */}
       <PopularMenu/>
       <AboutContent/>
-      <GalleryContent>
-        <GalleryDetailBtn/>
-      </GalleryContent>
+      <GalleryContent/>
       <FeaturesContent/>
       <TestimonialsCard/>
-      <ChefsContent/>
+      <ChefsContent/>     
     </main>
     </>
   )
