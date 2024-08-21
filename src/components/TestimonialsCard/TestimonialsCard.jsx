@@ -23,7 +23,7 @@ const TestimonialsCard = () => {
                                 navigation={{
                                     prevEl: '.swiper-button-prev',
                                     nextEl: '.swiper-button-next',
-                                  }}
+                                }}
                                 loop={true}
                                 breakpoints={{
                                     300: {
@@ -71,6 +71,11 @@ const TestimonialsCard = () => {
                                             </Col>
                                         </div>
                                     </SwiperSlide>)}
+
+                                <div className="swiper-button-prev">
+                                </div>
+                                <div className="swiper-button-next">
+                                </div>
                             </Swiper>
                         </div>
                     </Row>

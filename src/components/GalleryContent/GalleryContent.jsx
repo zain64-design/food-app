@@ -1,7 +1,6 @@
 import React from 'react';
 import GalleryAPI from '../../API/Gallery.json';
 // import Fancybox from "../../assets/js/Fancybox";
-import GalleryDetailBtn from './GalleryDetailBtn';
 
 const GalleryContent = () => {
     return (
@@ -41,8 +40,6 @@ const GalleryContent = () => {
                             </div>
                         ))}
                     </div>
-
-                    <GalleryDetailBtn />
                 </div>
             </section>
         </React.Fragment>
