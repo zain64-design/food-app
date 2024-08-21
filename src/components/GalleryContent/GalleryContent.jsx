@@ -1,6 +1,6 @@
 import React from 'react';
 import GalleryAPI from '../../API/Gallery.json';
-// import Fancybox from "../../assets/js/Fancybox";
+import Fancybox from "../../assets/js/Fancybox";
 
 const GalleryContent = () => {
     return (
@@ -15,7 +15,7 @@ const GalleryContent = () => {
                             </div>
                         </div>
                     </div>
-                    {/* <Fancybox options={{ infinite: false, gallery: true, }}>
+                    <Fancybox options={{ infinite: false, gallery: true, }}>
                         <div className="row g-1">
                             {GalleryAPI.slice(0, 6).map((value) => (
                                 <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4" key={value.id}>
@@ -27,9 +27,9 @@ const GalleryContent = () => {
                                 </div>
                             ))}
                         </div>
-                    </Fancybox> */}
+                    </Fancybox>
 
-                    <div className="row g-1">
+                    {/* <div className="row g-1">
                         {GalleryAPI.slice(0, 6).map((value) => (
                             <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4" key={value.id}>
                                 <div className="card img-card">
@@ -39,7 +39,7 @@ const GalleryContent = () => {
                                 </div>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </React.Fragment>
