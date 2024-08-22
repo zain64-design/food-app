@@ -10,27 +10,26 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 import { Col, Container, Row } from 'react-bootstrap';
+import useFetch from '../../hooks/useFetch';
 
 const PopularMenu = () => {
 
+
+  const dataFetch = useFetch();
+
+  if(!dataFetch.isLoading && !dataFetch.data) {
+    dataFetch.fetch();
+  }
+  // console.log(productStore);
+  
   const [Menu, setMenu] = useState([]);
   const baseURL = 'https://zain64-design.github.io/product.json';
-  // const baseURL = 'https://demo-customprojects.com/developer/weed-entertainment/api/check-videos2';
   useEffect(() => {
     axios.get(baseURL).then((response) => {
-      console.log(response.data);
       setMenu(response.data)
     })
   }, []);
-
-  // const removeElem = (id) => {
-  //   // alert(id)
-  //   const myNewArray = Menu.filter((value) => {
-  //     return value.id != id;
-  //   })
-
-  //   setMenu(myNewArray);
-  // }
+  
 
   return (
     <React.Fragment>

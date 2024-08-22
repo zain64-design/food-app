@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { WavyContainer, WavyLink } from "react-wavy-transitions";
-// import {localstorage} from '../src/assets/js/localstorage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
@@ -16,13 +15,18 @@ import Chefs from './pages/Chefs';
 import Cart from './pages/Cart';
 import Gallery from './pages/Gallery';
 import SecureComponent from './SecureComp';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { store } from './Redux';
+
 
 const App = () => {
   return (
     <>
     
       <Router>
-        {/* <SecureComponent/> */}
+        <Provider store={store}>
+                  {/* <SecureComponent/> */}
       <WavyContainer />
         {/* to connect with browser url we need Router component to import this for use */}
         <Header />
@@ -41,6 +45,7 @@ const App = () => {
           <Route exact path="/Gallery" element={<Gallery />} />
         </Routes>
         <Footer />
+        </Provider>
       </Router>
     </>
   );

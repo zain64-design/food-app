@@ -2,9 +2,21 @@ import React from 'react';
 import Ratings from '../Rating/Ratings';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 const MenuProduct = (props) => {
   // console.log(props);
+
+  const productStore = useSelector(function(state) {
+    return state;
+  });
+
+  const {isLoading,products} = productStore;
+  console.log(productStore);
+
+   
+  
+
   return (
     <React.Fragment>
       {
