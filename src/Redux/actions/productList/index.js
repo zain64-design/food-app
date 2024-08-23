@@ -1,5 +1,6 @@
-// action creators
+// step1 action creators
 
+// 
 export const updateLoader = (value)=> {
     return {
         type: 'UPDATE_LOADER',
@@ -17,6 +18,13 @@ export const updateError = (value)=> {
 export const updateData = (value)=> {
     return {
         type: 'UPDATE_DATA',
+        value,
+    }
+}
+
+export const addToCart = (value)=> {
+    return {
+        type: 'ADD_TOCART',
         value,
     }
 }

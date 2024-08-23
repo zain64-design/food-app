@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import MenuProduct from '../Products/MenuProduct';
+import { useSelector } from 'react-redux';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import axios from 'axios';
@@ -18,21 +19,29 @@ const PopularMenu = () => {
   const dataFetch = useFetch();
 
   if(!dataFetch.isLoading && !dataFetch.data) {
-    dataFetch.fetch();
+    dataFetch.fetchData();
   }
-  // console.log(productStore);
+
+  // const productStore = useSelector(function (state) {
+  //   // never return whole state from use selector
+  //   return state;
+  // });
+
+  // const { products } = productStore;
+
+  // const allData = products;
   
-  const [Menu, setMenu] = useState([]);
-  const baseURL = 'https://zain64-design.github.io/product.json';
-  useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setMenu(response.data)
-    })
-  }, []);
+  // const [Menu, setMenu] = useState([]);
+  // const baseURL = 'https://zain64-design.github.io/product.json';
+  // useEffect(() => {
+  //   axios.get(baseURL).then((response) => {
+  //     setMenu(response.data)
+  //   })
+  // }, []);
   
 
   return (
-    <React.Fragment>
+    <>
       <section className="sec-menu">
         <Container className="position-relative">
           <div className="headings">
@@ -78,25 +87,22 @@ const PopularMenu = () => {
                   },
                 }}
               >
-                {Menu.map(value =>
+                {/* {Menu.map(value =>
                   <SwiperSlide key={value.id}>
                     <MenuProduct data={value} />
-                    {/* <div className="card burger-card">
-                      <div className="img">
-                        <img src={value.image} className="img-fluid thumb" alt="" />
-                      </div>
+                  </SwiperSlide>)} */}
 
-                      <div className="desc">
-                        <Link to={`/MenuDetail/${value.id}`} className="anchor">{value.name}</Link>
-                        <Ratings name={value.ratings} />
-                        <span className="number">{value.ratings}</span>
-                        <div className="ct-flex">
-                          <p>{value.price} <del>{value.oldPrice}</del> </p>
-                          <button onClick={() => removeElem(value.id)} className="btn order-btn hvr-bounce-to-right">add to cart</button>
-                        </div>
-                      </div>
-                    </div> */}
-                  </SwiperSlide>)}
+
+                  {/* {allData.map((value)=>(
+                    <SwiperSlide key={value.id}>
+                    <MenuProduct />
+                  </SwiperSlide>
+                  ))} */}
+
+<SwiperSlide>
+<MenuProduct />
+</SwiperSlide>
+                  
               </Swiper>
             </Col>
             {/* {Menu.map(value => <MenuProduct key={value.id} data={value} />)} */}
@@ -109,7 +115,7 @@ const PopularMenu = () => {
           </svg>
         </div> */}
       </section>
-    </React.Fragment>
+    </>
   )
 }
 

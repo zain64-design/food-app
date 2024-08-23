@@ -15,7 +15,6 @@ import Chefs from './pages/Chefs';
 import Cart from './pages/Cart';
 import Gallery from './pages/Gallery';
 import SecureComponent from './SecureComp';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { store } from './Redux';
 
