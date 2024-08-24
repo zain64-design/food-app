@@ -200,7 +200,24 @@ header {
           @include button(400,14px,$white,normal,capitalize,0,0,center,40px,95px,100px,2px solid $yellow,none,$yellow)
         }
         .cart-btn {
-          @include button(400,18px,$white,normal,capitalize,0 0 0 20px,0,center,40px,40px,50%,2px solid $yellow,none,$yellow)
+          @include button(400,18px,$white,normal,capitalize,0 0 0 20px,0,center,40px,40px,50%,2px solid $yellow,none,$yellow);
+          overflow: visible;
+          .cart-total {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            border: 2px solid $white;
+            height: 15px;
+            width: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: $dk-green;
+            color: $white;
+            font-size: 12px;
+            font-weight: 500;
+          }
         }
       }
     }

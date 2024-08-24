@@ -30,6 +30,54 @@ input:focus, button:focus {
   box-shadow: none;
 }
 
+.loader {
+  width: 65px;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  box-shadow: 0 0 0 3px inset #ff9c3a;
+  animation: l4 2.5s infinite;
+}
+
+.loader:after {
+  animation-delay: -1.25s;
+}
+
+@keyframes l4 {
+  0% {
+    inset: 0 35px 35px 0;
+  }
+  12.5% {
+    inset: 0 35px 0 0;
+  }
+  25% {
+    inset: 35px 35px 0 0;
+  }
+  37.5% {
+    inset: 35px 0 0 0;
+  }
+  50% {
+    inset: 35px 0 0 35px;
+  }
+  62.5% {
+    inset: 0 0 0 35px;
+  }
+  75% {
+    inset: 0 0 35px 35px;
+  }
+  87.5% {
+    inset: 0 0 35px 0;
+  }
+  100% {
+    inset: 0 35px 35px 0;
+  }
+}
 /* Underline From Left */
 .hvr-underline-from-left {
   vertical-align: middle;
@@ -203,6 +251,23 @@ header .navbar .side-ul .sd-li .cart-btn {
   transition: all 0.3s ease-in-out;
   overflow: hidden;
   box-sizing: content-box;
+  overflow: visible;
+}
+header .navbar .side-ul .sd-li .cart-btn .cart-total {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border: 2px solid #ffffff;
+  height: 15px;
+  width: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #135846;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 header.sticky .navbar {
@@ -1652,10 +1717,6 @@ footer .footer-box.footer-extra .ext-ul li:nth-child(3) p::before {
 /* .sec-cart .cart-table thead tr th:nth-child(1) .cart-desc .pro-name {
   padding: 10px 0 10px 15px;
 } */
-.sec-cart .cart-table thead tr th:nth-child(3) {
-  text-align: center;
-}
-
 .sec-cart .cart-table tbody tr td:nth-child(1) .img-main {
   background: #F5F5F7;
   padding: 15px 0;
@@ -1692,26 +1753,17 @@ footer .footer-box.footer-extra .ext-ul li:nth-child(3) p::before {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 16px;
-  color: #509BF8;
+  color: #135846;
   text-transform: capitalize;
   margin: 0;
   padding: 0;
 }
 
 .sec-cart .cart-table tbody tr td .cart-desc ul {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
   margin: 20px 0 0 0;
 }
 
 .sec-cart .cart-table tbody tr td .cart-desc ul li {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 80%;
   margin: 0 0 10px 0;
   font-family: "Poppins", sans-serif;
   text-transform: capitalize;
@@ -1799,7 +1851,7 @@ footer .footer-box.footer-extra .ext-ul li:nth-child(3) p::before {
   flex: inherit;
 }
 
-.sec-cart .cart-table tbody tr td:nth-child(4) .price {
+.sec-cart .cart-table tbody tr td .price {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 16px;

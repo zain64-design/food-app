@@ -123,10 +123,6 @@
   padding: 10px 0 10px 15px;
 } */
 
-.sec-cart .cart-table thead tr th:nth-child(3) {
-    text-align: center;
-}
-
 .sec-cart .cart-table tbody tr td:nth-child(1) .img-main {
     background: #F5F5F7;
     padding: 15px 0;
@@ -163,26 +159,17 @@
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-size: 16px;
-    color: #509BF8;
+    color: $dk-green;
     text-transform: capitalize;
     margin: 0;
     padding: 0;
 }
 
 .sec-cart .cart-table tbody tr td .cart-desc ul {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
     margin: 20px 0 0 0;
 }
 
 .sec-cart .cart-table tbody tr td .cart-desc ul li {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 80%;
     margin: 0 0 10px 0;
     font-family: "Poppins", sans-serif;
     text-transform: capitalize;
@@ -270,7 +257,7 @@
     flex: inherit;
 }
 
-.sec-cart .cart-table tbody tr td:nth-child(4) .price {
+.sec-cart .cart-table tbody tr td .price {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 16px;

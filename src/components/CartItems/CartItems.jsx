@@ -1,7 +1,14 @@
 import React from 'react'
-import { Col, Container, Row, Table } from 'react-bootstrap'
+import { Col, Container, Row, Table } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import Ratings from '../Rating/Ratings';
+
 
 const CartItems = () => {
+
+    const cart = useSelector(state => state.cart);
+
+
     return (
         <>
             <section className="sec-cart">
@@ -13,59 +20,57 @@ const CartItems = () => {
                                     <thead>
                                         <tr>
                                             <th scope="col">Products</th>
-                                            <th scope="col"></th>
-                                            <th scope="col">quantity</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Genre</th>
                                             <th scope="col">price</th>
                                             <th scope="col">total</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div className="img-main">
-                                                    <img src="images/tp-sl1.png" className="img-fluid cart-img" alt="" />
-                                                </div>
-                                            </td>
+                                        {/* {cart && cart.length > 0 ?(
+                                            
+                                        data):(
+                                             <tr>
+                                                 <td colSpan="5" className="text-center">No items in the cart</td>
+                                             </tr>
+                                        )} */}
+                                        {Object.keys(cart).map((value)=>{
 
-                                            <td>
-                                                <div className="cart-desc">
-                                                    <div className="dsc-lt">
-                                                        <h6 className="pro-name">Kotton Krack Dog Sticker - Bully Sqaud</h6>
-                                                        <ul>
-                                                            <li> <strong>Product</strong> Stickers</li>
-                                                            <li> <strong>Color</strong> Multicolor</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div className="dsc-rt">
-                                                        <a href="javascript:;" className="edit">
-                                                            edit
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            const products = cart[value];
+                                            const {big_image,title,rank,rating,year,genre} = products;
 
-                                            <td>
-                                                {/* <div className="input-group">
-                                                <span className="input-group-btn">
-                                                    <button type="button" className="quantity-left-minus btn btn-quant btn-number" data-type="minus" data-field="">
-                                                        <i className="fal fa-minus"></i>
-                                                    </button>
-                                                </span>
-                                                <input type="text" id="quantity" name="quantity" className="form-control input-number" value="10" min="1" max="100">
-                                                    <span className="input-group-btn">
-                                                        <button type="button" className="quantity-right-plus btn btn-quant btn-number" data-type="plus" data-field="">
-                                                            <i className="fal fa-plus"></i>
-                                                        </button>
-                                                    </span>
-                                            </div> */}
-                                            </td>
-                                            <td>
-                                                <h6 className="price">$20.90</h6>
-                                            </td>
-                                            <td>
-                                                <h6 className="price">$20.80</h6>
-                                            </td>
-                                        </tr>
+                                            return (
+                                                <tr key={value.id}>
+                                                <td>
+                                                    <div className="img-main">
+                                                        <img src={big_image} className="img-fluid cart-img" alt="" />
+                                                    </div>
+                                                </td>
+    
+                                                <td>
+                                                    <div className="cart-desc">
+                                                        <div className="dsc-lt">
+                                                            <h6 className="pro-name">{title}</h6>
+                                                            <ul>
+                                                                <li> <strong>Rank</strong> {rank}</li>
+                                                                <li> <strong>Rating</strong> {rating}   <Ratings name={rating}/></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </td>
+    
+                                                <td>
+                                                    <h6 className="price">{genre[0]}</h6>
+                                                </td>
+                                                <td>
+                                                    <h6 className="price">{year}</h6>
+                                                </td>
+                                                <td>
+                                                    <h6 className="price">{year}</h6>
+                                                </td>
+                                            </tr>
+                                            )
+                                        })}
                                     </tbody>
                                 </Table>
                             </div>

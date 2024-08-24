@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { WavyLink } from "react-wavy-transitions";
 // import $ from "jquery";
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import header_logo from '../../assets/images/logo.png';
 
 const Header = () => {
@@ -58,6 +59,12 @@ useEffect(() => {
   };
 }, []);
 
+  const cart =  useSelector((state)=> state.cart)
+
+  
+
+  const cartCount = Object.keys(cart || {}).length;
+
   return (
     <React.Fragment>
       <header className={`fixed-top ${isScrolled ? 'scrolled' : ''}`}>
@@ -101,6 +108,7 @@ useEffect(() => {
                 <li className="sd-li">
                 <NavLink className="cart-btn hvr-bounce-to-right" to={'/Cart'}>
                   <i className="fa-solid fa-basket-shopping"></i>
+                  <span className='cart-total'>{cartCount}</span>
                 </NavLink>
                 </li>
               </ul>

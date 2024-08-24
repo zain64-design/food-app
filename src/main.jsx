@@ -9,10 +9,14 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'antd/dist/reset.css';
 import 'swiper/react';
 import '../src/assets/scss/style.css';
+import { Provider } from 'react-redux';
+import { store } from './Redux';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
   ,
 )

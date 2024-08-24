@@ -3,7 +3,6 @@ import { Container,Row,Col } from 'react-bootstrap';
 // import InnerContent from './InnerContent';
 
 const Inner_Banner = (props) => {
-    console.log(props);
     return (
         <React.Fragment>
             <section className="sec-inner-banner">

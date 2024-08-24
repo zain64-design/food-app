@@ -5,7 +5,7 @@ const Ratings = ({name}) => {
     // console.log(name);
   return (
     <>
-      <Rate allowHalf count={5} disabled defaultValue={name} /> 
+      <Rate allowHalf count={10} disabled defaultValue={name} /> 
     </>
   )
 }

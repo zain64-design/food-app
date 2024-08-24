@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Ratings from '../components/Rating/Ratings';
 import axios from 'axios';
-import { Card,Row,Container } from 'react-bootstrap';
+import { Col,Card,Row,Container } from 'react-bootstrap';
 
 const MenuDetail = () => {
   const [details, setdetails] = useState([]);
@@ -10,7 +10,7 @@ const MenuDetail = () => {
   console.log(params);
 
   // Axios method
-  const baseURL = 'https://zain64-design.github.io/pr-one.json';
+  const baseURL = 'https://zain64-design.github.io/product-detail.json';
   // const baseURL = `https://demo-customprojects.com/developer/weed-entertainment/api/video-detail/${params.id}`;
 
   useEffect(() => {
@@ -27,10 +27,11 @@ const MenuDetail = () => {
   return (
     <>
       <main>
-        <section className="sec-menu-detail">
+        <section className="sec-menu-detail pt-5 mt-5">
           <Container className="">
             <Row>
-                <Card className="burger-card" key={details.id}>
+              <Col xs={12} sm={6} md={6} lg={6} xl={6} xxl={6}>
+              <Card className="burger-card" key={details.id}>
                   <div className="img">
                     <img src={details.image} className="img-fluid thumb" alt="" />
                   </div>
@@ -45,6 +46,7 @@ const MenuDetail = () => {
                     </div>
                   </div>
                 </Card>
+              </Col>
             </Row>
           </Container>
         </section>

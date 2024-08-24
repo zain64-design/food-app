@@ -8,30 +8,48 @@ const useFetch = () => {
 
     const dispatch = useDispatch()
 
-    const baseURL = 'https://zain64-design.github.io/product.json';
+    // const baseURL = 'https://zain64-design.github.io/product.json';
 
-    function fetchData() {
+    const options = {
+      method: 'GET',
+      url: 'https://imdb-top-100-movies.p.rapidapi.com/',
+      headers: {
+        'x-rapidapi-key': 'aa7075937amshd8e8e0b5ab2d8acp1d2495jsnbd274ff06019',
+        'x-rapidapi-host': 'imdb-top-100-movies.p.rapidapi.com'
+      }
+    };
+
+    async function fetchData() {
       // now this hook will transfer our actions to the reducer fn
         dispatch(updateLoader(true));
         dispatch(updateError(''));
         dispatch(updateData([]));
+
+        setTimeout(async() => {
+          try {
+            const response = await axios.request(options);
+            dispatch(updateData(response.data));
+        } catch (error) {
+            dispatch(updateError('Failed to fetch data from Rapid API'));
+        } finally {
+            dispatch(updateLoader(false));
+        }
+        }, 5000);
         
-        setTimeout(()=> {
-            axios.get(baseURL).then((response) => {
-                // console.log(response.data);
-                dispatch(updateData(response.data));
-              })
-              .catch((e)=> {
-                // console.error(e);
-                dispatch(updateError('Failed to fetch data'));
-              })
-              .finally(()=> {
-                dispatch(updateLoader(false));
-              });
-        },5000)
+        //  setTimeout(()=> {
+        //     axios.get(baseURL).then((response) => {
+        //         dispatch(updateData(response.data));
+        //       })
+        //       .catch((e)=> {
+        //         dispatch(updateError('Failed to fetch data'));
+        //       })
+        //       .finally(()=> {
+        //         dispatch(updateLoader(false));
+        //       });
+        // },5000)
     }
 
-  return {fetchData}
+  return {fetchData};
 }
 
 export default useFetch

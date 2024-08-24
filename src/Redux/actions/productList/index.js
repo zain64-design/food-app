@@ -1,6 +1,5 @@
 // step1 action creators
-
-// 
+ 
 export const updateLoader = (value)=> {
     return {
         type: 'UPDATE_LOADER',
@@ -24,7 +23,7 @@ export const updateData = (value)=> {
 
 export const addToCart = (value)=> {
     return {
-        type: 'ADD_TOCART',
+        type: 'UPDATE_CART',
         value,
     }
 }
