@@ -10,8 +10,6 @@ export default function productListReducer(state = initialState, action) {
     // des value from action
     const { value } = action;
 
-    // console.log(action);
-
     // optional chaining ?
     switch (action?.type) {
         case 'UPDATE_LOADER': {
@@ -35,7 +33,20 @@ export default function productListReducer(state = initialState, action) {
         case 'UPDATE_CART': {
             const oldState = { ...state }
             oldState.cart = { ...oldState.cart };
-            oldState.cart[value['id']] = value;
+            // oldState.cart[value['id']] = value;
+
+            const key = value['id'];
+
+            if (oldState?.cart[key]?.count) {
+                oldState.cart[key].count += 1;
+            }
+            else {
+                oldState.cart[key] = {};
+                oldState.cart[key].count = 1;
+                oldState.cart[key].value = value;
+            }
+
+
             return oldState;
         }
 

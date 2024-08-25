@@ -7,43 +7,6 @@ import { useSelector } from 'react-redux';
 import header_logo from '../../assets/images/logo.png';
 
 const Header = () => {
-  // window.addEventListener("scroll", function () {
-  //   var header = document.querySelector("header");
-  //   header.classList.toggle("sticky", window.scrollY > 50);
-  //   console.log('.................gotcha');
-  // });
-
-//   $(window).scroll(function() {
-//     var scroll = $(window).scrollTop();
-//     if (scroll >= 60) {
-//         $('header').addClass("sticky");
-//     } else {
-//         $('header').removeClass("sticky");
-//     }
-// });
-
-////////////////////////// 1st method
-
-// const [isScrolled, setIsScrolled] = useState(false);
-  
-// useEffect(() => {
-//   function handleScroll() {
-//     if (window.scrollY > 0) {
-//       setIsScrolled(true);
-//     } else {
-//       setIsScrolled(false);
-//     }
-//     console.log("isScrolled", isScrolled);
-//   }
-  
-//   window.addEventListener('scroll', handleScroll);
-  
-//   return () => {
-//     window.removeEventListener('scroll', handleScroll);
-//   };
-// }, [isScrolled]);
-
-////////////////////////// 2nd method
 
 const [isScrolled, setIsScrolled] = useState(false);
 
@@ -63,7 +26,12 @@ useEffect(() => {
 
   
 
-  const cartCount = Object.keys(cart || {}).length;
+  let cartCount = 0;
+
+  Object.keys(cart || {}).forEach((key) => {
+    const data =  cart[key];
+    cartCount = cartCount + data.count;
+  });
 
   return (
     <React.Fragment>

@@ -22,11 +22,9 @@ const App = () => {
 
   const dataFetch = useFetch();
 
-  useEffect(() => {
-    if (!dataFetch.isLoading && !dataFetch.data) {
-      dataFetch.fetchData();
-    }
-  }, [dataFetch]);
+  if (!dataFetch.isLoading && !dataFetch.data) {
+    dataFetch.fetchData();
+  }
 
 
   return (

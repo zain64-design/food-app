@@ -42,7 +42,7 @@ const MenuProduct = () => {
 
   return (
     <>
-      {products?.slice(0, 9).map((value) => (
+      {/* {products?.slice(0, 9).map((value) => (
         <Col xs={12} sm={6} md={6} lg={4} xl={4} xxl={4} key={value.id} className='mb-4'>
         <Card className="burger-card">
             <div className="img">
@@ -55,6 +55,26 @@ const MenuProduct = () => {
               <span className="number">{value.rating}</span>
               <div className="ct-flex">
                 <p>{value.year} <del>{value.year}</del> </p>
+                <button onClick={handleAddToCart(value)} className="btn order-btn hvr-bounce-to-right">add to cart</button>
+              </div>
+            </div>
+          </Card>
+        </Col>
+      ))} */}
+
+        {products?.slice(0, 9).map((value) => (
+        <Col xs={12} sm={6} md={6} lg={4} xl={4} xxl={4} key={value.id} className='mb-4'>
+        <Card className="burger-card">
+            <div className="img">
+              <img src={value.image} className="img-fluid thumb" alt="" />
+            </div>
+
+            <div className="desc">
+              <Link to={`/MenuDetail/${value.id}`} className="anchor">{`${value.name.substring(0,30)}...`}</Link>
+              <Ratings name={value.ratings} />
+              <span className="number">{value.ratings}</span>
+              <div className="ct-flex">
+                <p>{value.price} <del>{value.oldPrice}</del> </p>
                 <button onClick={handleAddToCart(value)} className="btn order-btn hvr-bounce-to-right">add to cart</button>
               </div>
             </div>
