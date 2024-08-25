@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Col, Container, Row, Table } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Ratings from '../Rating/Ratings';
+import { MdAutoDelete } from "react-icons/md";
+import { removeFromCart } from '../../Redux/actions/productList';
 
 
 const CartItems = () => {
 
   const basket = useSelector(state => state.cart);
+
+  const dispatch = useDispatch();
+
+  const handleRemoveItem = useCallback((id) => {
+    return () => {
+      dispatch(removeFromCart(id));
+    }
+  }) 
 
 
   return (
@@ -21,8 +31,8 @@ const CartItems = () => {
                     <tr>
                       <th scope="col">Products</th>
                       <th scope="col">Name</th>
-                      <th scope="col">Old Price</th>
                       <th scope="col">Price</th>
+                      <th scope="col">Quantity</th>
                       <th scope="col">total</th>
                     </tr>
                   </thead>
@@ -104,7 +114,7 @@ const CartItems = () => {
                             </td>
 
                             <td>
-                              <h6 className="price"><del>{price}</del></h6>
+                              <h6 className="price">{price}</h6>
                             </td>
                             <td>
                               <h6 className="price">{cart.count}</h6>
@@ -112,6 +122,7 @@ const CartItems = () => {
                             <td>
                               <h6 className="price">${ (cart.count * parseFloat(price.replace('$', ''))).toFixed(2) }</h6>
                             </td>
+                            <td><button onClick={handleRemoveItem(key)} type='button' className='btn btn-danger'><MdAutoDelete /></button></td>
                           </tr>
                         );
                       })
@@ -126,7 +137,7 @@ const CartItems = () => {
                 </Table>
               </div>
             </Col>
-            <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
+            {/* <div className="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
               <div className="card checkout-box">
                 <div className="details">
                   <div className="summary">
@@ -146,7 +157,7 @@ const CartItems = () => {
                 </div>
                 <a href="" className="btn checkout-btn">checkout now</a>
               </div>
-            </div>
+            </div> */}
 
           </Row>
         </Container>
