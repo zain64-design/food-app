@@ -15,6 +15,7 @@ const CartItems = () => {
   const handleRemoveItem = useCallback((id) => {
     return () => {
       dispatch(removeFromCart(id));
+      alert(id)
     }
   }) 
 
@@ -34,10 +35,58 @@ const CartItems = () => {
                       <th scope="col">Price</th>
                       <th scope="col">Quantity</th>
                       <th scope="col">total</th>
+                      <th scope="col">actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     {basket && Object.keys(basket).length > 0 ? (
+                      Object.keys(basket).map((key) => {
+                        const cart = basket[key];
+
+                        const product = cart.value;
+
+                        console.log({cart});
+
+                        const {image,name,oldPrice,price,ratings } = product;
+                                                
+                        return (
+                          <tr key={key}>
+                            <td>
+                              <div className="img-main">
+                                <img src={image} className="img-fluid cart-img" alt="" />
+                              </div>
+                            </td>
+
+                            <td>
+                              <div className="cart-desc">
+                                <div className="dsc-lt">
+                                  <h6 className="pro-name">{name}</h6>
+                                  <ul>
+                                    <li>
+                                      <strong>old price</strong> <del>{oldPrice}</del>
+                                    </li>
+                                    <li>
+                                      <strong>Rating</strong> {ratings}{' '}
+                                      <Ratings name={ratings} />
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </td>
+
+                            <td>
+                              <h6 className="price">{price}</h6>
+                            </td>
+                            <td>
+                              <h6 className="price">{cart.count}</h6>
+                            </td>
+                            <td>
+                              <h6 className="price">${ (cart.count * parseFloat(price.replace('$', ''))).toFixed(2) }</h6>
+                            </td>
+                            <td><button onClick={handleRemoveItem(key)} type='button' className='btn btn-danger'><MdAutoDelete /></button></td>
+                          </tr>
+                        );
+                      })
                       // Object.keys(cart).map((value) => {
                       //   const products = cart[value];
                       //   const { big_image, title, rank, rating, year, genre } = products;
@@ -79,53 +128,6 @@ const CartItems = () => {
                       //     </tr>
                       //   );
                       // })
-                      Object.keys(basket).map((key) => {
-                        const cart = basket[key];
-
-                        const product = cart.value;
-
-                        console.log({cart});
-
-                        const {image,name,oldPrice,price,ratings } = product;
-                                                
-                        return (
-                          <tr key={key}>
-                            <td>
-                              <div className="img-main">
-                                <img src={image} className="img-fluid cart-img" alt="" />
-                              </div>
-                            </td>
-
-                            <td>
-                              <div className="cart-desc">
-                                <div className="dsc-lt">
-                                  <h6 className="pro-name">{name}</h6>
-                                  <ul>
-                                    <li>
-                                      <strong>Price</strong> {price}
-                                    </li>
-                                    <li>
-                                      <strong>Rating</strong> {ratings}{' '}
-                                      <Ratings name={ratings} />
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </td>
-
-                            <td>
-                              <h6 className="price">{price}</h6>
-                            </td>
-                            <td>
-                              <h6 className="price">{cart.count}</h6>
-                            </td>
-                            <td>
-                              <h6 className="price">${ (cart.count * parseFloat(price.replace('$', ''))).toFixed(2) }</h6>
-                            </td>
-                            <td><button onClick={handleRemoveItem(key)} type='button' className='btn btn-danger'><MdAutoDelete /></button></td>
-                          </tr>
-                        );
-                      })
                     ) : (
                       <tr>
                         <td colSpan="5" className="text-center">

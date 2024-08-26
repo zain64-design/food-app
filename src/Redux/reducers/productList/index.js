@@ -50,13 +50,13 @@ export default function productListReducer(state = initialState, action) {
 
         case 'REMOVE_CART': {
             // we need to avoid use structuredClone() to make a copy of obj if there is some thing really necessary then we use this otherwise avoid:
-            // const oldState = { ...state };
+            const oldState = { ...state };
             // now we are creating new reference of cart
-            // const oldCart = {...oldState.cart};
-            // delete oldCart.cart[value];
-            // oldState.cart = {...oldCart};
-            const oldState = structuredClone(state);
-            delete oldState.cart[value];
+            const oldCart = {...oldState.cart};
+            delete oldCart[value];
+            oldState.cart = {...oldCart};
+            // const oldState = structuredClone(state);
+            // delete oldState.cart[value];
             return oldState;
         }
 

@@ -13,7 +13,7 @@ const MenuProduct = () => {
 
   const cart = useSelector(state => state.cart);
 
-  console.log(cart);
+  // console.log(cart);
   
 
   const isLoading = useSelector(state => state.isLoading);// subsrcribe loading state
