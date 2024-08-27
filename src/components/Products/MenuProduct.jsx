@@ -4,21 +4,14 @@ import { Link } from 'react-router-dom';
 import { Card,Col } from 'react-bootstrap';
 import { useSelector,useDispatch } from 'react-redux';
 import { SwiperSlide } from 'swiper/react';
-import { addToCart } from '../../Redux/actions/productList';
+import { addToCart } from '../../Redux/actions/cart';
 import ContentLoader from '../Loader/ContentLoader';
 
 const MenuProduct = () => {
 
   // here we are passing call back fn in useSelector hook to call this hook to get the whole state of application: // never return whole state from use selector
-
-  const cart = useSelector(state => state.cart);
-
-  // console.log(cart);
-  
-
   const isLoading = useSelector(state => state.isLoading);// subsrcribe loading state
-  
-  const products = useSelector(state => state.products);
+  const products = useSelector(state => state?.products?.data);
   const errors = useSelector(state => state.error);
   const dispatch = useDispatch();
 

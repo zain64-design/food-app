@@ -3,12 +3,12 @@ import { Col, Container, Row, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Ratings from '../Rating/Ratings';
 import { MdAutoDelete } from "react-icons/md";
-import { removeFromCart } from '../../Redux/actions/productList';
+import { removeFromCart } from '../../Redux/actions/cart';
 
 
 const CartItems = () => {
 
-  const basket = useSelector(state => state.cart);
+  const basket = useSelector(state => state?.cart?.data);
 
   const dispatch = useDispatch();
 
@@ -42,10 +42,7 @@ const CartItems = () => {
                     {basket && Object.keys(basket).length > 0 ? (
                       Object.keys(basket).map((key) => {
                         const cart = basket[key];
-
                         const product = cart.value;
-
-                        console.log({cart});
 
                         const {image,name,oldPrice,price,ratings } = product;
                                                 
