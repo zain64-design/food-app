@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import MenuProduct from '../Products/MenuProduct';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,9 +8,24 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 import { Col, Container, Row } from 'react-bootstrap';
+import useFetch from '../../hooks/useFetch';
 
 
 const PopularMenu = () => {
+
+  const dataFetch = useFetch();
+
+  // useEffect(()=> {
+
+  //   if (!dataFetch.isLoading && !dataFetch.data) {
+  //     dataFetch.fetchData();
+  //   }
+
+  // },[dataFetch]);
+
+  if (!dataFetch.isLoading && !dataFetch.data) {
+    dataFetch.fetchData();
+  }
 
 
   return (

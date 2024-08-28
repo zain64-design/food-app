@@ -60,9 +60,9 @@ useEffect(() => {
                 <li className="nav-item">
                   <WavyLink direction="up" duration={3000} color="#ff9c3a" className="nav-link hvr-underline-from-left" to={'/Services'}>services</WavyLink>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <WavyLink direction="up" duration={3000} color="#ff9c3a" className="nav-link hvr-underline-from-left" to={'/Blogs'}>blog</WavyLink>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <WavyLink direction="up" duration={3000} color="#ff9c3a" className="nav-link hvr-underline-from-left" to={'/Contact'}>contact us</WavyLink>
                 </li>

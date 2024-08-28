@@ -15,17 +15,10 @@ import Chefs from './pages/Chefs';
 import Cart from './pages/Cart';
 import Gallery from './pages/Gallery';
 import SecureComponent from './SecureComp';
-import useFetch from './hooks/useFetch';
+
 
 
 const App = () => {
-
-  const dataFetch = useFetch();
-
-  if (!dataFetch.isLoading && !dataFetch.data) {
-    dataFetch.fetchData();
-  }
-
 
   return (
         <Router>

@@ -36,17 +36,16 @@ const useFetch = () => {
         // }
         // }, 5000);
         
-         setTimeout(()=> {
-            axios.get(baseURL).then((response) => {
-                dispatch(updateData(response.data));
-              })
-              .catch((e)=> {
-                dispatch(updateError('Failed to fetch data'));
-              })
-              .finally(()=> {
-                dispatch(updateLoader(false));
-              });
-        },5000)
+        setTimeout(async () => {
+          try {
+              const response = await axios.get(baseURL);
+              dispatch(updateData(response.data));
+          } catch (error) {
+              dispatch(updateError('Failed to fetch data'));
+          } finally {
+              dispatch(updateLoader(false));
+          }
+      }, 5000);
     }
   return {fetchData};
 }
