@@ -7,7 +7,7 @@ const initialState = {
 export default function productListReducer(state = initialState, action) {
     // console.log(state);
     const { value } = action;
-    // console.log('product reducer', action.type);
+    console.log('product reducer', action.type);
 
     // optional chaining ?
     switch (action?.type) {

@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import Ratings from '../Rating/Ratings';
 import { MdAutoDelete } from "react-icons/md";
 import { removeFromCart } from '../../Redux/actions/cart';
+import { getCartSelector } from '../../Redux/reducers/cart';
 
 
 const CartItems = () => {
 
-  const basket = useSelector(state => state?.cart?.data);
+  const basket = useSelector(getCartSelector);
 
   const dispatch = useDispatch();
 

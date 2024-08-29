@@ -11,9 +11,9 @@ const MenuProduct = () => {
 
   const dispatch = useDispatch();
   // here we are passing call back fn in useSelector hook to call this hook to get the whole state of application: // never return whole state from use selector
-  const isLoading = useSelector(state => state?.products?.isLoading);// subsrcribe loading state
+  const isLoading = useSelector(state => state.products.isLoading);// subsrcribe loading state
   const products = useSelector(state => state?.products?.data);
-  const errors = useSelector(state => state?.products?.error);
+  const errors = useSelector(state => state.products.error);
 
 
   const handleAddToCart = useCallback((value) => {
