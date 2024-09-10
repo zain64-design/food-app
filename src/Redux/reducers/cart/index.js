@@ -7,7 +7,7 @@ export default function cartReducer(state = initialState, action) {
 // console.log(state);
     // des value from action
     const { value } = action;
-    console.log('cart reducer', action.type);
+    // console.log('cart reducer', action.type);
     
     switch (action?.type) {
         case actions.UPDATE_CART: {
