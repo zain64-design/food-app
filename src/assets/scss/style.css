@@ -78,6 +78,10 @@ input:focus, button:focus {
     inset: 0 35px 35px 0;
   }
 }
+@font-face {
+  font-family: "Affection";
+  src: url("../fonts/Affection.ttf");
+}
 /* Underline From Left */
 .hvr-underline-from-left {
   vertical-align: middle;
