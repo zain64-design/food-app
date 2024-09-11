@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from '../../API/Banner.json';
 import {NavLink} from 'react-router-dom';
 import { Container,Row,Col } from 'react-bootstrap';
+import Text from '../Text/Text';
 
 const Mainbanner = () => {
   return (
@@ -13,7 +14,7 @@ const Mainbanner = () => {
               {Banner.map((value) => (
                 <div className="desc" key={value.id}>
                   <h6>{value.head}</h6>
-                  <p>{value.para}</p>
+                  <Text as="p" className='para'>{value.para}</Text>
                   <div className="btn-grp">
                     <NavLink to="/Menu" className="btn ep-btn hvr-bounce-to-right">explore menu</NavLink>
                   </div>
