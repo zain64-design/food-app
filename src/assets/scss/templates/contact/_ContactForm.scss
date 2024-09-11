@@ -41,6 +41,7 @@
     .form-main {
         margin: 50px 0 0 0;
         .input-field {
+            margin-bottom: 15px;
             .fm-lb {
                 @include headings(500, 20px, $dk-green, 18px, capitalize, 0 0 15px 0, 0, center);
             }
@@ -51,7 +52,7 @@
                 height: 50px;
                 width: 100%;
                 box-shadow: 5px 5px 100px #f2f2f2, -5px -5px 100px #ffffff;
-                @include para (300, 16px, $lt-grey, 26px, unset,10px 0 15px 0,10px 20px,left);
+                @include para (300, 16px, $lt-grey, 26px, unset,10px 0 0 0,10px 20px,left);
                 &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
                     @include para (300, 16px, $lt-grey, 26px, capitalize,0,0,left);
                   }
@@ -103,6 +104,9 @@
                 &:hover::after {
                     color: $yellow;
                 }
+            }
+            small {
+                color: $red;
             }
         }
     }

@@ -1425,6 +1425,9 @@ footer .footer-box.footer-extra .ext-ul li:nth-child(3) p::before {
 .sec-contact .form-main {
   margin: 50px 0 0 0;
 }
+.sec-contact .form-main .input-field {
+  margin-bottom: 15px;
+}
 .sec-contact .form-main .input-field .fm-lb {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -1450,7 +1453,7 @@ footer .footer-box.footer-extra .ext-ul li:nth-child(3) p::before {
   color: #A7A7A7;
   line-height: 26px;
   text-transform: unset;
-  margin: 10px 0 15px 0;
+  margin: 10px 0 0 0;
   padding: 10px 20px;
   text-align: left;
 }
@@ -1595,6 +1598,9 @@ footer .footer-box.footer-extra .ext-ul li:nth-child(3) p::before {
 }
 .sec-contact .form-main .input-field .submit-btn:hover::after {
   color: #ff9c3a;
+}
+.sec-contact .form-main .input-field small {
+  color: #C7253E;
 }
 
 .sec-cart {

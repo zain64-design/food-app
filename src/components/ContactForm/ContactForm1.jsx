@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import { useFormik } from 'formik';
+import { Formik,Field,ErrorMessage } from 'formik';
 import { MdError } from "react-icons/md";
 import * as Yup from 'yup'
 
@@ -20,31 +20,6 @@ const ContactForm = () => {
         console.log('Submitting form', values);
         // submit to server here
     }
-    // const validate = values => {
-    //     let errors = {}
-
-    //     if(!values.name) {
-    //         errors.name = 'Name is required'
-    //     }
-    //     if(!values.email) {
-    //         errors.email = 'Email is required'
-    //     }
-    //     else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-    //         errors.email = 'Invalid email address'
-    //     }
-
-    //     if(!values.phone) {
-    //         errors.phone = 'Phone is required'
-    //     }
-    //     if(!values.subject) {
-    //         errors.subject = 'Subject is required'
-    //     }
-    //     if(!values.message) {
-    //         errors.message = 'Message is required'
-    //     }
-
-    //     return errors
-    // }
 
     const validationSchema = Yup.object({
         name: Yup.string().required('Name is required'),
@@ -53,21 +28,9 @@ const ContactForm = () => {
         subject: Yup.string().required('Subject is required'),
         message: Yup.string().required('Message is required')
     })
-
-    const formik =  useFormik({
-        initialValues,
-        onSubmit,
-        validationSchema
-    })
-
     // console.log('form values', formik.values);
-
     // console.log('errors', formik.errors);
-
-    console.log('visited', formik.touched);
-
-    
-
+    // console.log('visited', formik.touched);
     return (
         <>
             <section className="sec-contact">
@@ -107,42 +70,43 @@ const ContactForm = () => {
                         <Col xs={12} sm={12} md={12} lg={10} xl={10} xxl={10}>
                         <div className="form-main">
                             {/* <Form action="https://formspree.io/f/xbjerlwg" method="POST"> */}
-                            <Form onSubmit={formik.handleSubmit}>
+                            <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+                            <Form>
                                 <Row>
                                     <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                         <div className="input-field">
                                             <Form.Label className="fm-lb" htmlFor="fmctl1">your name</Form.Label>
-                                            <Form.Control type="text" className="form-control inp-ctl" id="fmctl1" placeholder="enter your email" required name="name" autoComplete='off' onChange={formik.handleChange} value={formik.values.name} onBlur={formik.handleBlur} />
-                                            {formik.touched.name && formik.errors.name? <small>{formik.errors.name}<MdError /></small>:null}
+                                            <Field type="text" className="form-control inp-ctl" id="fmctl1" placeholder="enter your email" required name="name" autoComplete='off' />
+                                            <small><ErrorMessage name='name'/></small>
                                         </div>
                                     </Col>
                                     <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                         <div className="input-field">
                                             <Form.Label className="fm-lb" htmlFor="fmctl2">your email</Form.Label>
-                                            <Form.Control type="email" className="form-control inp-ctl" id="fmctl2" placeholder="enter your name" required name="email" autoComplete='off' onChange={formik.handleChange} value={formik.values.email} onBlur={formik.handleBlur} />
-                                            {formik.touched.email && formik.errors.email? <small>{formik.errors.email} <MdError /></small>:null}
+                                            <Field type="email" className="form-control inp-ctl" id="fmctl2" placeholder="enter your name" required name="email" autoComplete='off' />
+                                            <small><ErrorMessage name='email'/></small>
                                         </div>
                                     </Col>
                                     <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                         <div className="input-field">
                                             <Form.Label className="fm-lb" htmlFor="fmctl3">your phone</Form.Label>
-                                            <Form.Control type="number" className="form-control inp-ctl" id="fmctl3" placeholder="enter your phone number" required name="phone" autoComplete='off' onChange={formik.handleChange} value={formik.values.phone} onBlur={formik.handleBlur} />
-                                            {formik.touched.phone && formik.errors.phone? <small>{formik.errors.phone} <MdError /></small>:null}
+                                            <Field type="number" className="form-control inp-ctl" id="fmctl3" placeholder="enter your phone number" required name="phone" autoComplete='off' />
+                                            <small><ErrorMessage name='phone'/></small>
                                         </div>
                                     </Col>
                                     <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                         <div className="input-field">
                                             <Form.Label className="fm-lb" htmlFor="fmctl4">subject</Form.Label>
-                                            <Form.Control type="text" className="form-control inp-ctl" id="fmctl4" placeholder="enter your phone number" required name="subject" autoComplete='off' onChange={formik.handleChange} value={formik.values.subject} onBlur={formik.handleBlur} />
-                                            {formik.touched.subject && formik.errors.subject? <small>{formik.errors.subject} <MdError /></small>:null}
+                                            <Field type="text" className="form-control inp-ctl" id="fmctl4" placeholder="enter your phone number" required name="subject" autoComplete='off' />
+                                            <small><ErrorMessage name='subject'/></small>
                                         </div>
                                     </Col>
 
                                     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
                                         <div className="input-field">
                                             <Form.Label className="fm-lb" htmlFor="fmctl5">your message</Form.Label>
-                                            <Form.Control as="textarea" className="form-control txt-ctl"  placeholder="enter your message" name="message" id="fmctl5" rows="10" onChange={formik.handleChange} value={formik.values.message} onBlur={formik.handleBlur}></Form.Control>
-                                            {formik.touched.message && formik.errors.message? <small>{formik.errors.message} <MdError /></small>:null}
+                                            <Field as="textarea" className="form-control txt-ctl"  placeholder="enter your message" name="message" id="fmctl5" rows="10"></Field>
+                                            <small><ErrorMessage name='message'/></small>
                                         </div>
                                     </Col>
                                     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
@@ -152,6 +116,7 @@ const ContactForm = () => {
                                     </Col>
                                 </Row>
                             </Form>
+                            </Formik>
                         </div>
                         </Col>
                     </Row>
