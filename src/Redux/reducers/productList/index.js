@@ -1,9 +1,11 @@
 import * as actions from "../../constants/productList"
 // we created initial state
 const initialState = {
-    data: []
+    data: [],
+    isLoading: true,
+    error: null,
 }
-// we created reducer function and in this fucntion its require state param and 2nd is action
+// we created reducer function and in this function its require state param and 2nd is action
 export default function productListReducer(state = initialState, action) {
     // console.log(state);
     const { value } = action;
